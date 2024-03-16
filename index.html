@@ -342,16 +342,12 @@
             data-wow-delay="1s"
           >
             <form
-              class="col-md-12 contact-form"
-              action="https://formsubmit.co/roweidafathy@gmail.com"
-              method="POST"
-            >
+              class="col-md-12 contact-form" type="Post">
               <div class="row">
                 <!--Email-->
                 <div class="col-md-6">
                   <input
-                    id="con_email"
-                    name="con_email"
+                    id="email"
                     class="form-inp requie"
                     type="text"
                     placeholder="البريد الإلكتروني"
@@ -360,8 +356,7 @@
                 <!--Name-->
                 <div class="col-md-6">
                   <input
-                    id="con_name"
-                    name="con_name"
+                    id="name"
                     class="form-inp requie"
                     type="text"
                     placeholder="الاسم"
@@ -370,18 +365,17 @@
                 <div class="col-md-12">
                   <!--Message-->
                   <textarea
-                    name="con_message"
-                    id="con_message"
+                    id="message"
                     class="requie"
                     placeholder="الرسالة"
                     rows="8"
                   ></textarea>
-                  <input
-                    id="con_submit"
+                  <button
                     class="site-button"
-                    type="submit"
-                    value="أرسل رسالة"
-                  />
+                    onclick="sendMail()"
+                  >
+                  أرسل رسالة
+                  </button>
                 </div>
               </div>
             </form>
@@ -432,6 +426,8 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/emailJS.js"></script>
+
     <script>
       //SUPER SLİDER
       $("#slides").superslides({
@@ -439,5 +435,16 @@
         play: 3000,
       });
     </script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "Pk0F03yYt_Rg2uco5",
+  });
+})();
+</script>
+
   </body>
 </html>
